@@ -16,5 +16,5 @@ Run `node index.js` from the root directory to see this.
 Both methods of mocking the `sharp` module fail - that is, using `jest.genMockFromModule` and returning an object with each function returning `this`.
 
 ```
-node index.js
+npm test
 ```
