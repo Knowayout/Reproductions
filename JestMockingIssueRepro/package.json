@@ -1,0 +1,17 @@
+{
+  "name": "jestmockingissuerepro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Jamie Corkhill",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  },
+  "dependencies": {
+    "sharp": "^0.22.1"
+  }
+}
