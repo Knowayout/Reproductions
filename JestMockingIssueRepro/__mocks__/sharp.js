@@ -5,17 +5,10 @@
 
 
 // // Option Two (Does Not Work) - Error: sharp is not a function.
-module.exports = {
-    sharp() {
-        return this;
-    },
-    resize() {
-        return this;
-    },
-    jpeg() {
-        return this;
-    },
-    toBuffer() {
-        return this;
-    }
-}
+const Sharp = jest.fn().mockImplementation(() => ({
+    resize: jest.fn().mockReturnThis(),
+    jpeg: jest.fn().mockReturnThis(),
+    toBuffer:jest.fn().mockReturnThis()
+}));
+
+module.exports = Sharp;
