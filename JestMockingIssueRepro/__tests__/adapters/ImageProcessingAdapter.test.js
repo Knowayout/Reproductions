@@ -1,5 +1,5 @@
-const sharp = require('sharp');
 jest.mock('sharp');
+const sharp = require('sharp');
 
 const ImageProcessingAdapter = require('./../../adapters/sharp/ImageProcessingAdapter');
 
@@ -14,6 +14,6 @@ test('Should call module functions with correct arguments', async () => {
 
     // Assertions
     expect(sharp).toHaveBeenCalledWith(buffer);
-    expect(sharp.resize).toHaveBeenCalledWith(size);
-    expect(sharp.jpeg).toHaveBeenCalledWith(options);
+    expect(sharp().resize).toHaveBeenCalledWith(size);
+    expect(sharp().jpeg).toHaveBeenCalledWith(options);
 });
