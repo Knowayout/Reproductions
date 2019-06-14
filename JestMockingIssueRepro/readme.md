@@ -18,3 +18,17 @@ Both methods of mocking the `sharp` module fail - that is, using `jest.genMockFr
 ```
 npm test
 ```
+
+### Solution
+06/14/2019 at 03:08 AM Zulu Time, this issue now has a solution. The contents of the `__mocks__/sharp.js` file should be as follows.
+
+```javascript
+const mock = {
+    resize: jest.fn().mockReturnThis(),
+    jpeg: jest.fn().mockReturnThis(),
+    toBuffer: jest.fn().mockReturnThis()
+}; 
+
+module.exports = jest.fn(() => mock);
+```
+Thanks to Stack Overflow user `brian-lives-outdoors` for providing this solution. 
